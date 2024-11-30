@@ -12,7 +12,7 @@ let population; // Population
 let numOfMice = 50;
 let mutationRate = 0.01;
 
-let snakePopulation;
+let snakePopulation = null; // Initialize as null
 
 let lifeCounter; // Timer for cycle of generation
 
@@ -21,7 +21,7 @@ let target; // Target position
 let traps;
 
 let info;
-let snakeRelease;
+let snakeRelease = false;
 
 let button;
 
@@ -43,9 +43,6 @@ function setup() {
   // Create a population with a mutation rate, and population max
 
   population = new Population(mutationRate, numOfMice);
-  if (snakeRelease) {
-    snakePopulation = new SnakePopulation(mutationRate, numOfMice / 4);
-  }
 
   info = createP("");
   info.position(10, 380);
@@ -108,6 +105,7 @@ function mouseClicked() {
 }
 
 function snakeReleased() {
-  snakeRelease = true;
-  snakePopulation = new SnakePopulation(mutationRate, numOfMice / 4);
+  if (!snakePopulation) {
+    snakePopulation = new SnakePopulation(mutationRate, numOfMice / 4);
+  }
 }
