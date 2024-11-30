@@ -105,6 +105,7 @@ function mouseClicked() {
 }
 
 function snakeReleased() {
+  console.log("snake released pressed");
   if (!snakePopulation) {
     snakePopulation = new SnakePopulation(mutationRate, numOfMice / 4);
   }
