@@ -1,3 +1,3 @@
-View Demo: https://gitmuj.github.io/genetic-algo-mice/genetic-algorithm/
+View Demo: https://muj-mohmand.github.io/genetic-algo-mice/genetic-algorithm/
 
 A pathing finding solution found using Genetic algorithms. The mice try to reach the target represented as the yellow square (cheese). The closer they are the better chance they have in passing their genes onto  the next generation. The mice evolve and becoming smarter and get closer to the target as generation cycles complete. Mouse traps can be placed  as obstacles for them to avoid. There can be a population of snakes  added that also evovle as well to become better hunters and act as moving obstacles. Inspired by my introduction to AI course and the Nature of Code series. 
