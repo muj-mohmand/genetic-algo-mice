@@ -34,3 +34,5 @@ Inspired by my introduction to AI course and the *Nature of Code* series, this p
    ```bash
    git clone https://github.com/muj-mohmand/genetic-algo-mice.git
    cd genetic-algo-mice
+## 🌟 Demo
+[Click here to view the live demo!](https://muj-mohmand.github.io/genetic-algo-mice/genetic-algorithm/)
