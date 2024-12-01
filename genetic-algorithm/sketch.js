@@ -98,10 +98,36 @@ function draw() {
     trap.display();
   });
 } // end draw
+function isClickInButtonArea() {
+  // Get the button's bounding box
+  const buttonBounds = button.elt.getBoundingClientRect();
 
+  // Get the canvas's bounding box to adjust for offset
+  const canvasBounds = canvas.getBoundingClientRect();
+
+  // Adjust button bounds relative to the canvas
+  const buttonLeft = buttonBounds.left - canvasBounds.left;
+  const buttonRight = buttonBounds.right - canvasBounds.left;
+  const buttonTop = buttonBounds.top - canvasBounds.top;
+  const buttonBottom = buttonBounds.bottom - canvasBounds.top;
+
+  // Check if the mouse is within the button bounds
+  return (
+    mouseX >= buttonLeft &&
+    mouseX <= buttonRight &&
+    mouseY >= buttonTop &&
+    mouseY <= buttonBottom
+  );
+}
 function mouseClicked() {
-  let trap = new Trap(createVector(mouseX, mouseY));
-  traps.push(trap);
+  if (isClickInButtonArea()) {
+    console.log("Clicked in the 'Release Snakes' button area.");
+    snakeReleased();
+    return;
+  } else {
+    let trap = new Trap(createVector(mouseX, mouseY));
+    traps.push(trap);
+  }
 }
 
 function snakeReleased() {
